@@ -1,4 +1,4 @@
-#include "connect/connect.h"
+#include "../lib/connect/connect.h"
 
 int main () {
     initClient(30, "localhost", "35671");

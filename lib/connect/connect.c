@@ -39,7 +39,7 @@ int initServer(char* port) {
 	}
 	printf("Socket port #%d\n",ntohs(name.sin_port));
 
-	/* Lê */
+		/* Lê */
 	while (1) {
 		int i = 0;
 		if (recvfrom(sock,buf,1024, 0, (struct sockaddr *)&name, &length)<0)
@@ -54,7 +54,7 @@ int initServer(char* port) {
         exit(0);
 }
 
-int initClient(int timout, char* host, char* port) {
+int initClient(int timeout, char* host, char* port) {
 	int sock;
 	int sockopt;
     /* Struct para configurar Timeout */
@@ -63,8 +63,8 @@ int initClient(int timout, char* host, char* port) {
 	struct hostent *hp, *gethostbyname();
         /* Cria o socket de comunicacao */
 	sock = socket(AF_INET, SOCK_DGRAM, 0);
-		/* Set Timout */
-	tv.tv_sec = timout;
+		/* Set timeout */
+	tv.tv_sec = timeout;
 	tv.tv_usec = 0;
 	sockopt = setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
 	if(sock < 0 || sockopt < 0) {

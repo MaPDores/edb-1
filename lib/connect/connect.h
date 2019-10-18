@@ -14,10 +14,9 @@ typedef struct _response {
     // etc
 } response;
 
+int initServer(char* port);
 
-int initServer(char*);
-
-int initClient(int, char*, char*);
+int initClient(int timeout, char* host, char* port);
 
 int sendRequest(request);
 
