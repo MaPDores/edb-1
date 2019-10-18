@@ -39,7 +39,7 @@ int initServer(char* port) {
 	}
 	printf("Socket port #%d\n",ntohs(name.sin_port));
 
-	/* Lê */
+		/* Lê */
 	while (1) {
 		int i = 0;
 		if (recvfrom(sock,buf,1024, 0, (struct sockaddr *)&name, &length)<0)
