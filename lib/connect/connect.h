@@ -1,30 +1,21 @@
-#include "connect.c"
-
 typedef struct _request {
     // Dados da requisição
     // cidades
     // ordem de cidades
     // tempo de estadia
     // etc
+    int data;
 } request;
 
 typedef struct _response {
     // Dados da resposta
     // menor distancia
     // etc
+    int status;
 } response;
 
-int initServer(char* port);
+#include "connect.c"
 
-int initClient(int timeout, char* host, char* port);
+int initServer(char* port, response handleRequest(request));
 
-int sendRequest(request);
-
-int receiveRequest(request);
-
-int sendResponse(response);
-
-int receiveResponse(response);
-
-void setTimeOut(int);
-
+int initClient(int timeout, char* host, char* port, request createRequest(), int handleReponse(response));
