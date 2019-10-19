@@ -1,4 +1,5 @@
 #include "../lib/connect/connect.h"
+#include "../lib/united-states-map/united-states-map.h"
 
 request createRequest() {
     request req;
@@ -6,11 +7,11 @@ request createRequest() {
     return req;
 }
 
-int handleResponse(response res) {
+int responseHandler(response res) {
     printf("client has received status: %d\n", res.status);
     return res.status;
 }
 
 int main () {
-    exit(initClient(30, "localhost", "35671", &createRequest, &handleResponse));
+    exit(initClient(60, "localhost", "35671", &createRequest, &responseHandler));
 }
