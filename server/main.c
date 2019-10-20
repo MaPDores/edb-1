@@ -9,7 +9,6 @@ response requestHandler(request req) {
     return res;
 }
 
-int main () {
-    // char port[] = "35671";
-    exit(initServer("35671", &requestHandler));
+int main (int argc, char *argv[]) {
+    exit(initServer(argv[0], &requestHandler));
 }

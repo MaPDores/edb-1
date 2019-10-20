@@ -64,7 +64,7 @@ int initClient(int timeout, char* host, char* port, request createRequest(), int
 	sock = socket(AF_INET, SOCK_DGRAM, 0);
 		
 	/* Set timeout */
-	tv.tv_sec = timeout;
+	tv.tv_sec = atoi(timeout);
 	tv.tv_usec = 0;
 	sockopt = setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
 	

@@ -12,6 +12,6 @@ int responseHandler(response res) {
     return res.status;
 }
 
-int main () {
-    exit(initClient(60, "localhost", "35671", &createRequest, &responseHandler));
+int main (int argc, char *argv[]) {
+    exit(initClient(argv[0], argv[1], argv[2], &createRequest, &responseHandler));
 }

@@ -2,6 +2,9 @@
     "files.associations": {
         "connect.h": "c",
         "stdio.h": "c",
-        "netdb.h": "c"
+        "netdb.h": "c",
+        "*.log": "c",
+        "united-states-map.c": "cpp",
+        "united-states-map.h": "c"
     }
 }
