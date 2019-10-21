@@ -116,7 +116,7 @@ int *dfs(FILE* arq, int graph[41][41], int n) {
 
 
 
-int hamiltao (FILE* arq, int X, int graph[42][42], int path[], int* pathCount, int visited[]) {
+int hamilton (FILE* arq, int X, int graph[42][42], int path[], int* pathCount, int visited[]) {
     stack s; initStack(&s); //inicia pilha
     visited[X]++; //salva visita de X
     //fprintf(arq, "Visitando %s\n", findCityByIndex(X));
@@ -138,7 +138,7 @@ int hamiltao (FILE* arq, int X, int graph[42][42], int path[], int* pathCount, i
         //nem verifica, 
         int w = pop(&s);//só popa em w
         //e lasca o hamiltão nele
-        if (hamiltao(arq, w, graph, path, pathCount, visited)) { //se resposta do hamiltão for 1
+        if (hamilton(arq, w, graph, path, pathCount, visited)) { //se resposta do hamiltão for 1
             //printf("cidade: %s\nindex: %d\npath count: %d\n\n", findCityByIndex(w), w, (*pathCount));
             path[(*pathCount)++] = w;//adiciona w no path
             return 1;
@@ -147,7 +147,7 @@ int hamiltao (FILE* arq, int X, int graph[42][42], int path[], int* pathCount, i
         while (!isEmpty(s)) { //enquanto pilha não vazia
             int w = pop(&s);
             if (!visited[w]) //se não visitou
-                if (hamiltao(arq, w, graph, path, pathCount, visited)) { //se( hamilton == 1 )
+                if (hamilton(arq, w, graph, path, pathCount, visited)) { //se( hamilton == 1 )
                     //printf("cidade: %s\nindex: %d\npath count: %d\n\n", findCityByIndex(w), w, (*pathCount));
                     path[(*pathCount)++] = w; //adiciona w no path
                     return 1;
@@ -171,7 +171,7 @@ void main (int argc, char* argv[]) {
     int visited[42] = {0};
 
     path[42] = X;
-    if (hamiltao(arq, X, map, path, &pathCount, visited)) {
+    if (hamilton(arq, X, map, path, &pathCount, visited)) {
 
         printPath(arq, pathCount, path);
     } else {
