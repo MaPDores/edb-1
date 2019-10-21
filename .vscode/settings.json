@@ -5,6 +5,7 @@
         "netdb.h": "c",
         "*.log": "c",
         "united-states-map.c": "cpp",
-        "united-states-map.h": "c"
+        "united-states-map.h": "c",
+        "stdlib.h": "c"
     }
 }

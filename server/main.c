@@ -1,6 +1,6 @@
-#include "../lib/connect/connect.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "../lib/connect/connect.h"
 
 response requestHandler(request req) {
     response res;
@@ -10,5 +10,5 @@ response requestHandler(request req) {
 }
 
 int main (int argc, char *argv[]) {
-    exit(initServer(argv[0], &requestHandler));
+    exit(initServer(argv[1], &requestHandler));
 }

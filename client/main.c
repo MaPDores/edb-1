@@ -13,5 +13,5 @@ int responseHandler(response res) {
 }
 
 int main (int argc, char *argv[]) {
-    exit(initClient(argv[0], argv[1], argv[2], &createRequest, &responseHandler));
+    exit(initClient(60, "localhost", "37542", &createRequest, &responseHandler));
 }
